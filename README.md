@@ -1,4 +1,6 @@
-# Synlabs
+# Synlabs MCQ
+
+![Alt text](https://static.wixstatic.com/media/2ba46c_39e74f301ebf4df9b4b272338b62e7cb~mv2.png/v1/crop/x_0,y_8,w_285,h_74/fill/w_265,h_65,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/logo.png)
 
 # Description:- 
 An MCQ format of question where has a selected no of questions which have 4 Options, out of which anyone is correct 
@@ -13,6 +15,12 @@ The Question's difficulty is represented by the Stars at the top which will give
 
 ![Screenshot (93)](https://github.com/vmewada01/Synlabs/assets/122343841/b4b27176-749d-4b54-a961-3c9f422cef43)
 
+# To run 
+npm install 
 
-# Thank you Very Much.!!
+# npm packages 
+npm install  react icons
+
+
+# Thankyou Very Much.!!
 
