@@ -10,10 +10,10 @@ const Form = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [showNextButton, setShowNextButton] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
- 
 
+
+  
   const handleAnswerClick = (answer) => {
     setSelectedAnswer(answer);
     setShowNextButton(true);
@@ -25,29 +25,48 @@ const Form = () => {
     }
     setShowNextButton(false);
     setSelectedAnswer(null);
-    setShowResult(false);
+
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   };
 
   const renderStars = (difficulty) => {
+    const maxStars = 5;
+    const filledStars= Math.min(difficulty,maxStars)
+    const emptyStars = maxStars - difficulty;
     const stars = [];
-    for (let i = 0; i < difficulty; i++) {
-      stars.push(<FaStar key={i} />);
+
+    for (let i = 0; i < filledStars; i++) {
+      stars.push(<FaStar key={i} style={{color:"black"}} />);
     }
+
+    for(let i=0; i<emptyStars; i++){
+        stars.push(<FaStar key={filledStars + i} style={{color:"gray"}} />)
+    }
+
     return stars;
   };
 
   const currentQuestion = jsonData[currentQuestionIndex];
   const totalQuestions = jsonData.length;
+// console.log(currentQuestion)
+
 
   return (
     <>
-      {/* progress bar start */}
+   {(!currentQuestion)? (
+        <div className="FormComplete">Form submitted Successfully ..!!</div>
+      ) : null}
 
-      <ProgressBar
+
+    {currentQuestion &&(<div>
+{/* progress bar start */}
+
+<ProgressBar
         currentQuestionIndex={currentQuestionIndex}
         totalQuestions={totalQuestions}
       />
+
+    
 
       {/* progress bar end */}
       <div className="mainContainer">
@@ -59,13 +78,15 @@ const Form = () => {
           </div>
           <div className="Enterainment">Entertainment Board Games</div>
           <div>
-            {renderStars(
-              currentQuestion.difficulty === "hard"
-                ? 3
-                : currentQuestion.difficulty === "medium"
-                ? 2
-                : 1
-            )}
+            {currentQuestionIndex + 1 <= totalQuestions &&
+              renderStars(
+                currentQuestion.difficulty === "hard"
+                  ? 3
+                  : currentQuestion.difficulty === "medium"
+                  ? 2
+                  : 1
+              )}
+          
           </div>
         </div>
         {/* Heading Part End */}
@@ -101,8 +122,8 @@ const Form = () => {
           {showNextButton && (
             <p className="Ans">
               {selectedAnswer === currentQuestion.correct_answer
-                ? "Correct!"
-                : "Sorry!"}
+                ? "Correct"
+                : "Sorry, Please try again"}
             </p>
           )}
 
@@ -114,26 +135,22 @@ const Form = () => {
         </div>
 
         {/* answer giving part done  */}
-      
-       
+
         {/* Score Bar Start  */}
-       
-       <div className="score-bar-div">
-        <div>Score {score*5}%</div>
-        <div>Max Score 100%</div>
-        </div> 
-      <ScoreBar
-      score={score}
-      totalQuestions={totalQuestions}
-      
-      />
-    
+
+        <div className="score-bar-div">
+          <div>Score {score * 5}%</div>
+          <div>Max Score 100%</div>
+        </div>
+        <ScoreBar score={score} totalQuestions={totalQuestions} />
+
         {/* Score Bar End */}
-      
       </div>
 
 
 
+    </div>)}
+      
     </>
   );
 };
