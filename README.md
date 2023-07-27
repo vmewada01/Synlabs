@@ -1,4 +1,4 @@
-# Synlabs MCQ
+# Synlabs MCQ :-
 
 ![Alt text](https://static.wixstatic.com/media/2ba46c_39e74f301ebf4df9b4b272338b62e7cb~mv2.png/v1/crop/x_0,y_8,w_285,h_74/fill/w_265,h_65,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/logo.png)
 
