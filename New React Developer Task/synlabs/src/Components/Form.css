@@ -1,0 +1,106 @@
+.mainContainer{
+width: 80%;
+margin: auto;
+height: 650px;
+
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: grey;
+     }
+
+     .Question{
+        font-size: 30px;
+
+     }
+     .Enterainment{
+      color: Gray;
+     }
+
+     .gridBox{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        grid-gap: 1rem;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+
+      .Incorrect_ans , .Correct_ans{
+        background-color: #f0f0f0;
+        font-size: 20px;
+        width: 200px;
+        
+       border: 1px solid black;
+       border-radius: 3px ;
+       cursor: pointer;
+      }
+      .Incorrect_ans:hover , .Correct_ans:hover{
+        background-color: black;
+        color: white;
+      }
+
+      .NextQuestionDiv{
+         display: flex;
+         flex-direction: column;
+         margin: auto;
+         align-content: center;
+     
+         text-align: center;
+      }
+
+      .NextQuestionButton{
+        background-color: #f0f0f0;
+        font-size: 20px;
+        width: 200px;
+        height: 40px;
+       border: 1px solid black;
+       margin: auto;
+       border-radius: 3px ;
+       cursor: pointer;
+     
+      }
+      .NextQuestionButton:hover{
+        background-color: black;
+        color: white;
+      }
+    
+    .Ans{
+        font-size: 30px;
+    }
+     
+
+    .score-bar {
+        height: 40px;
+        background-color: #f0f0f0;
+        margin-bottom: 10px;
+        position: relative;
+        border-radius: 5px;
+        border: 1px solid black;
+       
+      }
+      
+      .score {
+        height: 100%;
+        background-color: black;
+      
+         }
+
+         .score-bar-div{
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: 500;
+         }
+
+  
+
