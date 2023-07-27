@@ -11,8 +11,6 @@ const Form = () => {
   const [showNextButton, setShowNextButton] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
-
-
   
   const handleAnswerClick = (answer) => {
     setSelectedAnswer(answer);
